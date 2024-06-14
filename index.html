@@ -63,25 +63,7 @@
     .section h2 {
       margin-top: 0;
     }
-    <!-- pdf,text container -->
-    .pdf-container, .text-container {
-        margin-top: 20px;
-    }
-    .pdf-viewer {
-        width: 100%;
-        height: 600px;
-        border: 1px solid #ccc;
-    }
-    .sidebar {
-      width: 25%;
-      background: white;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      margin-left: 20px;
-    }
-    .sidebar h2 {
-      margin-top: 0;
-    }
+
     .contact-info {
     position: fixed;
     bottom: 10px; /* Adjust as needed */
@@ -187,38 +169,22 @@
                 <h2>Introduction</h2>
                 <p>Hello! I am Avoy Jana, persuing Masters in Physics in Indian Institute of Technology, Delhi. I am trying to conserve my all works, being embedded in this webpage.</p>
               </div>
-              <div class="section" id="Curriculam Vitae (CV)">
+              <div class="section" id="Curriculam Vitae">
                 <h2>CV and SoP </h2>
                     <div class="pdf-container" id="pdf-container">
                         <details>
                             <summary>Curriculam Vitae (CV)</summary>
-                             <div id="cvViewer" class="pdf-viewer"></div>
+                            <embed src="cv.pdf" type="application/pdf" />
                         </details>
                     </div>
-                    <div class="text-container" id="text-container">
+                    <div class="pdf-container" id="pdf-container">
                         <details>
                             <summary>Statement of Purpose (SoP)</summary>
-                            
+                            <embed src="cv.pdf" type="application/pdf" />
                         </details>
-                    </div> 
+                    </div>
                </div>
-                <script>
-                    function loadCV(filename) {
-                        var cvViewer = document.getElementById("cvViewer");
-                        var embed = document.createElement('embed');
-                        embed.src = filename;
-                        embed.type = "application/pdf";
-                        embed.width = "100%";
-                        embed.height = "600px";
-                        cvViewer.innerHTML = "";
-                        cvViewer.appendChild(embed);
-                    }
-            
-                    // Load CV when page is loaded
-                    document.addEventListener('DOMContentLoaded', function() {
-                        loadCV('cv.pdf');
-                    });
-                </script>
+        
               <div class="section" id="Connect with me">
                 <h2>Connect with me</h2>
                 <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/your-linkedin-id">your-linkedin-id</a></p>
