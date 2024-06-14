@@ -192,7 +192,7 @@
                     <div class="pdf-container" id="pdf-container">
                         <details>
                             <summary>Curriculam Vitae (CV)</summary>
-                            <div id="cvViewer" class="pdf-viewer"></div>
+                             <div id="cvViewer" class="pdf-viewer"></div>
                         </details>
                     </div>
                     <div class="text-container" id="text-container">
@@ -202,12 +202,21 @@
                         </details>
                     </div> 
                </div>
-                    <!-- PDFObject library -->
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.7/pdfobject.min.js"></script>
                 <script>
-                    document.addEventListener('DOMContentLoaded', () => {
-                        PDFObject.embed('cv.pdf', '#cvViewer');
-                        PDFObject.embed('sop.pdf', '#sopViewer');
+                    function loadCV(filename) {
+                        var cvViewer = document.getElementById("cvViewer");
+                        var embed = document.createElement('embed');
+                        embed.src = filename;
+                        embed.type = "application/pdf";
+                        embed.width = "100%";
+                        embed.height = "600px";
+                        cvViewer.innerHTML = "";
+                        cvViewer.appendChild(embed);
+                    }
+            
+                    // Load CV when page is loaded
+                    document.addEventListener('DOMContentLoaded', function() {
+                        loadCV('cv.pdf');
                     });
                 </script>
               <div class="section" id="Connect with me">
